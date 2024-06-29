@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAYA-Software Project V</title>
+    <style>
+        header {
+      background-color: rgba(255, 229, 229, 1); /* 80% transparency */
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: left;
+        }
+
+        .login-container h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .login-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #bb767d;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-group button:hover {
+            background-color: #000000;
+        }
+
+        .form-group .forgot-password {
+            margin-top: 10px;
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .form-group .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .home-link img {
+            max-width: 100px;
+            border-radius: 8px;
+        }
+
+        .home-link button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .home-link button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+       
+        <h2>Login</h2>
+        <form class="login-form" id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="email" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+            <div class="form-group">
+                <a href="signup.html" class="forgot-password">Sign Up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            const validCredentials = [
+                { email: 'tasnuva@gmail.com', password: '12345' },
+                { email: 'nafi@gmail.com', password: '12345' },
+                { email: 'pika1@gmail.com', password: '12345' }
+            ];
+            
+            const enteredEmail = document.getElementById('username').value;
+            const enteredPassword = document.getElementById('password').value;
+            
+            const isValidUser = validCredentials.some(credential => 
+                credential.email === enteredEmail && credential.password === enteredPassword
+            );
+            
+            if (isValidUser) {
+                window.location.href = 'index.html'; // Redirect to the index page
+            } else {
+                alert('Sign up first');
+            }
+        });
+    </script>
+</body>
+</html>

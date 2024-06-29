@@ -1,0 +1,303 @@
+:root {
+    --pink: #bb767d;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+  }
+  
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+  }
+  
+  section {
+    padding: 2rem 9%;
+  }
+  
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    background: #333;
+    margin-top: 1rem;
+    padding: .9rem 3.5rem;
+    color: #fff;
+  }
+  
+  .btn:hover {
+    background: var(--pink);
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #bb767d; /* Updated header background color */
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  }
+  
+  header .logo {
+    font-size: 3rem;
+    color: #fff; /* Set logo color to white */
+    font-weight: bolder;
+  }
+  
+  header .logo span {
+    color: var(--pink);
+  }
+  
+  header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #fff; /* Set navbar link color to white */
+  }
+  
+  header .navbar a:hover {
+    color: var(--pink);
+  }
+  
+  header .icons a {
+    font-size: 2.5rem;
+    color: #fff; /* Set icon color to white */
+    margin-left: : 1.5rem;
+  }
+  
+  header .icons a:hover {
+    color: var(--pink);
+  }
+  
+  header #toggler {
+    display: none;
+  }
+  
+  header .fa-bars {
+    font-size: 3rem;
+    color: #fff; /* Set icon color to white */
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: 1rem solid rgba(0, 0, 0, 0.3);
+    display: none;
+  }
+  
+  .footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .footer .box-container .box {
+    flex: 1 1 25rem;
+  }
+  
+  .footer .box-container .box h3 {
+    color: #333;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a {
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a:hover {
+    color: var(--pink); /* Typo corrected, should be var(--pink) */
+    text-decoration: underline;
+  }
+  
+  .footer .box-container .box img {
+    margin-top: 1rem;
+  }
+  
+  .footer .credit {
+    text-align: center;
+    margin: auto;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 1.5rem;
+    color: #333;
+    border-top: .1rem solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer .credit span {
+    color: var(--pink);
+  }
+  
+  .products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .products .box-container .box {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    border: 1rem solid rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+    position: relative;
+    width: 5rem;
+  }
+  
+  .products .box-container .box .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: .5rem .5rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #bb3372;
+    z-index: 1;
+    border-radius: .5rem;
+  }
+  
+  .products .box-container .box .image {
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+  }
+  
+  .products .box-container .box .image img {
+    max-height: 12rem; /* Adjust the maximum height of the image */
+    width: auto; /* Ensure the width adjusts proportionally */
+  }
+  
+  .products .box-container .box:hover .image img {
+    transform: scale(1.1);
+  }
+  
+  .products .box-container .box .image .icons {
+    position: absolute;
+    bottom: -7rem;
+    left: 0;
+    right: 0;
+    display: flex;
+  }
+  
+  .products .box-container .box:hover .image .icons {
+    bottom: 0;
+  }
+  
+  .products .box-container .box .image .icons a {
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.5rem;
+    width: 50%;
+    background: var(--pink);
+    color: #fff;
+  }
+  
+  .products .box-container .box .image .icons .cart-btn {
+    border-left: .3rem solid #fff7;
+    border-right: .3rem solid #fff7;
+    width: 100%;
+  }
+  
+  .products .box-container .box .image .icons a:hover {
+    background: #333;
+  }
+  
+  .products .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .products .box-container .box .content h3 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .products .box-container .box .content .price {
+    font-size: 1.6rem;
+    color: var(--pink);
+  }
+  
+  /* Order section styling */
+  .order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh; /* Ensure it takes up the full viewport height */
+  }
+  
+  .order .heading,
+  .order h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .order .box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .order .box img {
+    max-width: 100%; /* Adjust the size of the image */
+    max-height: 150px; /* Limit the height to make it smaller */
+  }
+  
+  .order .content {
+    font-size: 1.8rem; /* Adjust the font size */
+  }
+  
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* Align text to the left */
+    width: 80%;
+  }
+  
+  .order-form .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .order-form label {
+    font-size: 1.6rem; /* Adjust the label font size */
+    width: 30%;
+    margin-right: 10px;
+  }
+  
+  .order-form input {
+    width: 65%;
+    padding: 10px;
+    font-size: 1.6rem;
+  }
+  
+  .confirm-order-btn {
+    font-size: 1.8rem; /* Make the button text larger */
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+  

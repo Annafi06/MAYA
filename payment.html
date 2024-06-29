@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maya - Payment</title>
+  <link rel="icon" href="favicon.ico">
+  <!-- Font Awesome CDN link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- Custom CSS file link -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Push content below header */
+    .payment {
+      padding-top: 100px; /* Adjust as needed */
+    }
+
+    /* Style for payment method icons */
+    .payment-methods label {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 20px;
+      cursor: pointer;
+      font-size: 24px; /* Adjust font size as needed */
+    }
+
+    .payment-methods label .icon {
+      margin-right: 10px;
+      font-size: 28px; /* Adjust icon size as needed */
+    }
+
+    /* Hide card details, paypal details, and COD details by default */
+    .card-details,
+    .paypal-details,
+    .cod-details {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header section starts here -->
+  <header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo">maya<span>.</span></a>
+    <nav class="navbar">
+      <a href="index.html">home</a>
+      <a href="#products">products</a>
+      <a href="#contact">contact</a>
+      <a href="login.html" class="cart-btn">Login</a>
+      <a href="signup.html" class="cart-btn">SignUp</a>
+    </nav>
+    <div class="icons">
+      <a href="#" class="fas fa-heart"></a>
+      <a href="#" class="fas fa-user"></a>
+    </div>
+  </header>
+  <!-- Header section end here -->
+
+  <!-- Payment section starts here -->
+   <section class="payment">
+        <div class="content">
+            <h2>Select Payment Method</h2>
+            <div class="payment-methods">
+                <input type="radio" id="credit_card" name="payment_method" value="credit_card">
+                <label for="credit_card"><i class="fab fa-cc-visa icon"></i>Credit Card</label>
+                <input type="radio" id="paypal" name="payment_method" value="paypal">
+                <label for="paypal"><i class="fab fa-paypal icon"></i>PayPal</label>
+                <input type="radio" id="cod" name="payment_method" value="cod">
+                <label for="cod"><i class="fas fa-money-bill icon"></i>Cash On Delivery</label>
+            </div>
+            <div class="card-details">
+                <h2>Payment Details - Credit Card</h2>
+                <form id="credit-card-form" class="form">
+                    <div class="form-group">
+                        <label for="card_number">Card Number</label>
+                        <input type="text" id="card_number" name="card_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name_on_card">Name on Card</label>
+                        <input type="text" id="name_on_card" name="name_on_card" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry_date">Expiry Date</label>
+                        <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" maxlength="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="total_amount">Total Amount</label>
+                        <input type="text" id="total_amount" name="total_amount" value="500" readonly>
+                    </div>
+                    <button type="submit" class="btn">Pay Now</button>
+                </form>
+            </div>
+            <div class="paypal-details">
+                <h2>Payment Details - PayPal</h2>
+                <form id="paypal-form" class="form">
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" id="phone_number" name="phone_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="total_amount_paypal">Total Amount</label>
+                        <input type="text" id="total_amount_paypal" name="total_amount_paypal" value="500" readonly>
+                    </div>
+                    <button type="submit" class="btn">Pay Now</button>
+                </form>
+            </div>
+            <div class="cod-details">
+                <h2>Payment Details - Cash On Delivery</h2>
+                <form id="cod-form" class="form">
+                    <div class="form-group">
+                        <label for="cod_name">Name</label>
+                        <input type="text" id="cod_name" name="cod_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cod_contact">Contact</label>
+                        <input type="text" id="cod_contact" name="cod_contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cod_address">Shipping Address</label>
+                        <input type="text" id="cod_address" name="cod_address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="total_amount_cod">Total Amount</label>
+                        <input type="text" id="total_amount_cod" name="total_amount_cod" value="500" readonly>
+                    </div>
+                    <button type="submit" class="btn">Pay Now</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('credit-card-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Payment Successful');
+            });
+
+            document.getElementById('paypal-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Payment Successful');
+            });
+
+            document.getElementById('cod-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Payment Successful');
+            });
+        </script>
+    </section>
+  <!-- Payment section ends here -->
+
+  <!-- Footer section starts here -->
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
+      </div>
+
+      <div class="box">
+        <h3>Extra Links</h3>
+        <a href="#">My Account</a>
+        <a href="#">My Order</a>
+        <a href="#">My Favourite</a>
+      </div>
+
+      <div class="box">
+        <h3>Locations</h3>
+        <a href="#">Dhaka</a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer section ends here -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const paymentMethods = document.querySelectorAll('.payment-methods input[type="radio"]');
+      const cardDetails = document.querySelector('.card-details');
+      const paypalDetails = document.querySelector('.paypal-details');
+      const codDetails = document.querySelector('.cod-details');
+
+      paymentMethods.forEach(method => {
+        method.addEventListener('change', function() {
+          if (this.value === 'credit_card') {
+            cardDetails.style.display = 'block';
+            paypalDetails.style.display = 'none';
+            codDetails.style.display = 'none';
+          } else if (this.value === 'paypal') {
+            cardDetails.style.display = 'none';
+            paypalDetails.style.display = 'block';
+            codDetails.style.display = 'none';
+          } else if (this.value === 'cod') {
+            cardDetails.style.display = 'none';
+            paypalDetails.style.display = 'none';
+            codDetails.style.display = 'block';
+          } else {
+            cardDetails.style.display = 'none';
+            paypalDetails.style.display = 'none';
+            codDetails.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
